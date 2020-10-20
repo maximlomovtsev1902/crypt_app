@@ -1,9 +1,13 @@
 #pragma once
 
 #include "algorithm.h"
+#include "permutation_bits_algorithm.h"
+#include "permutation_bytes_algorithm.h"
+#include "steganography_algorithm.h"
 #include "protector.h"
 
 #include <list>
+#include <memory>
 
 namespace crypt_core
 {
@@ -11,18 +15,18 @@ namespace crypt_core
 class protector_impl : public protector
 {
 public:
-    protector_impl(std::string& _key);
+    protector_impl();
     virtual ~protector_impl();
 
-    virtual std::string encrypt(std::string& data);
+    virtual void encrypt(std::string& data);
 
-    virtual std::string decrypt(std::string& data);
+    virtual void decrypt(std::string& data);
 
     virtual void set_key(std::string& key);
 
 private:
-    std::string& key_;
-    std::list<crypt_core::algorithm> algorithm_list_;
+    std::string key_;
+    std::list<std::unique_ptr<crypt_core::algorithm>> algorithm_list_;
 };
 
 }

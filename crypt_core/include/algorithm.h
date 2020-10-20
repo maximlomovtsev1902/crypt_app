@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 
 namespace crypt_core
@@ -5,11 +7,12 @@ namespace crypt_core
 
 class algorithm
 {
-    virtual void execute() = 0;
+public:
+    virtual void encrypt(std::string& data);
 
-    virtual void set_key(std::string& key) = 0;
+    virtual void decrypt(std::string& data);
 
-    virtual std::string& get_data() = 0;
+    virtual void set_key(std::string& key);
 };
 
 }
