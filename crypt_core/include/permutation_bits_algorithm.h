@@ -2,6 +2,8 @@
 
 #include "algorithm.h"
 
+#include <list>
+
 namespace crypt_core
 {
 
