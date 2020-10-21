@@ -12,11 +12,6 @@ protector_impl::protector_impl()
     algorithm_list_.push_back(std::make_unique<crypt_core::algorithm>(new steganography_algorithm()));
 }
 
-protector_impl::~protector_impl()
-{
-
-}
-
 void protector_impl::encrypt(std::string& data)
 {
     for(std::list<std::unique_ptr<crypt_core::algorithm>>::iterator iter = algorithm_list_.begin();

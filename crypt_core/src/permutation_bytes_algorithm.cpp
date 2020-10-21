@@ -3,17 +3,6 @@
 namespace crypt_core
 {
 
-permutation_bytes_algorithm::permutation_bytes_algorithm()
-    : key_()
-{
-
-}
-
-permutation_bytes_algorithm::~permutation_bytes_algorithm()
-{
-
-}
-
 void permutation_bytes_algorithm::encrypt(std::string& data)
 {
 
